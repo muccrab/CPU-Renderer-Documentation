@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Documentation For C# CPU Rasterizer By Daniel Ďurica</title>
+
+</head>
+<body>
+    <div id="top-panel-placeholder"></div> 
+
+    <div class="bodycontent">
+        <h1 class="alltext h1text">Welcome to the Documentation of CPU Rasterizer</h1>
+        <h2 class="alltext h2text">Statement</h2>
+        <p class="alltext ptext">
+            Hi, my name is Daniel Ďurica and I am the author of the CPU Rasterizer in C#.
+            This Project serves only as an example of how graphics cards might work.
+            It definitely doesn't have any practical usage, since you can get modern openGL running in few minutes,
+            and It runs much better. However, running opengl abstracts lot of cool stuff, that I wanted to figure out
+            how they are done. Also to produce a 3D image entirely from scratch is cool thing to do :). 
+            Anyway, let me stop yapping and let me introduce you to the project   
+        </p>
+        <h2 class="alltext h2text">How It Works</h2>
+        <p class="alltext ptext">
+          The Project is split into 4 Different distinct parts.
+        </p>
+        <ul class="alltext list">
+            <li>
+                <a href="main_cpu_renderer.html" class="alltext">
+                    Main CPU Renderer  
+                </a>
+            </li>
+            <li>
+                <a href="" class="alltext">
+                    Demo Program
+                </a>
+            </li>
+            <li>
+                <a href="" class="alltext">
+                  Logger  
+                </a>
+            </li>
+            <li>
+                <a href="" class="alltext">
+                  File Loader Extension  
+                </a>
+            </li>
+        </ul>
+        <p class="alltext ptext">
+            As you can see the first part is the most important one, it is the part that is responsible for
+            setting up window, holding vertex information and drawing.
+            <br><br>
+            In demo program I've tried to make a mini engine that works with the renderer.
+            I wanted to create a game on it, but I run out of the time.
+            It has some basic functionalities like gameobject hierarchy and component system.
+            <br><br>
+            The Logger is just assynchronous logger class, that is configurable.
+            <br><br>
+            File Loader extension is pretty much what it sounds like. It can load 3D objects from obj files,
+            and return prepared VAOs. It can also load textures and prepare them for the renderer.
+        </p>
+
+
+
+    </div>
+    <script src="top-panel-movement.js"></script>
+    <script src="load-top-panel.js"></script> 
+
+    <script src="main.js"></script>
+</body>
+</html>

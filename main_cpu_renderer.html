@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Documentation For C# CPU Rasterizer By Daniel Ďurica</title>
+
+</head>
+<body>
+    <div id="top-panel-placeholder"></div> 
+
+    <div class="bodycontent">
+        <h1 class="alltext h1text">Main CPU Renderer</h1>
+        <p class="alltext ptext">
+            To understand how renderer works I have prepared this diagram.
+            Obviously there are lot more things that are working in the background,
+            but this should be enough to understand the gist of it.
+        </p>
+        <img src="images/renderer-basic-diagram.png " alt="renderer_basic_diagram" class="siteimage">
+        <p class="alltext ptext">
+            As you can see, I have tried to make it as modular and as customisable as possible.
+            The Window3D serves as a interface to real time rendering. It's job is similiar to GL context in OpenGL.
+            Obviously, not as powerful, without it you can't have render loop.
+            <br><br>
+            You can however render (though not realtime) without the Window3D. All you need is ShaderProgram and Framebuffer.
+            I will get to buffers later, but basicaly framebuffers are storage areas for rendered frames.
+            The real shit is happening in ShaderProgram.
+            <br><br>
+            ShaderProgram handle most work that the renderer does. 
+            
+        </p>
+        <a href="/shader_program.html" class="alltext ptext">
+            They are explained more on this link along with Shader Linker and Texture Handler
+        </a>
+        <p class="alltext ptext">
+             One of the best functionalities of the CPU Renderer, is that it behaves
+             similiar to GPU on mudular user extendable programing with user defined shaders.
+             So far there are only Vertex and Fragment Shaders Supported.
+        </p>
+        <a href="/your_shaders.html" class="alltext ptext">
+            For more info on how you can setup your own shaders click here.
+        </a>
+        <a href="/buffers.html" class="alltext ptext">
+            All this time I have been using terms like Buffers, Vertices, Textures without explaining it.
+            Allow me to do so on this page.
+       </a>
+
+    </div>
+    <script src="top-panel-movement.js"></script>
+    <script src="load-top-panel.js"></script> 
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Documentation For C# CPU Rasterizer By Daniel Ďurica</title>
+
+</head>
+<body>
+    <div id="top-panel-placeholder"></div> 
+
+    <div class="bodycontent">
+        
+        
+        <h1 class="alltext h1text">
+            Making Custom Shaders
+        </h1>
+        <p class="alltext ptext">
+            As I have said users are able to make their own shaders.
+            To do that, you have to extend <b>IVertexShader</b> interface for Vertex Shader,
+            or <b>IFragmentShader</b> interface for fragment shaders. Both of them are extension
+            of <b>IShader</b> interface, that contains method <b>execute</b> that takes <b>ShaderFunctions</b> object,
+            that help you for instance with texture loading on your shaders.
+        </p>
+        <img src="images/cust_shaders.png " alt="renderer_basic_diagram" class="siteimage">
+        <h2 class="alltext h2text">Render Pipeline</h2>
+        <p class="alltext ptext">
+            To understand custom shaders, you must first understand how render pipeline works.
+            In my renderer I did not try to reinvent the wheel. If you have understanding of openGL pipeline,
+            it does not differ at all.
+            First it runs vertex shader on all vertices. Then, it rasterises the triangle according to frame buffer,
+            and interpolates values using barycentric coordinates to each fragment. It then runs each fragment and draws pixel
+            to framebuffer.
+            <br>
+            Here is an image how it works: 
+        </p>
+        <img src="images/simple_pipeline.drawio.png" alt="simple_pipeline" class="siteimage">
+        <h2 class="alltext h2text">Input Variables</h2>
+        <p class="alltext ptext">
+            Values that are gotten from the previous step in the pipeline.
+            <br>
+            - In Vertex Shader, they are the vertex data from vertex buffers.
+            <br>
+            - In Fragment Shader, they are interpolated data gotten from the vertex shaders.
+            <br>
+            These are the rules of the Input variables:
+        </p>
+        <ul class="alltext list">
+            <li>
+                <p class="alltext">
+                    They must have attribute <b>InputAttribute</b> set.
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    They must be declared public and be of value type
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    InputAttribute must have declared name.
+                    <br>
+                    - In Vertex Shaders, the name is basicaly pointless,
+                    but serves as a good way to separate your variables.
+                    <br>
+                    - In Fragment Shaders, it must be the same as the name of the OutputAttribute
+                    of the VertexShader output variable
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    Position is important to set in VertexShaders only.
+                    If set, it will sort variables according to their values.
+                    Every other attribute without set position will go after set ones.
+                    <br>
+                    <i>Note: The position is just relative to other set ones. 
+                    If you have attributes with positions (a: 5, b: 10, c: 2), their real position will be set (a: 2, b: 3, c: 1).</i> 
+                </p>
+            </li>
+        </ul>
+
+        <h2 class="alltext h2text">Output Variables</h2>
+        <p class="alltext ptext">
+            Values that are outputed from shaders to process in the next step in the pipeline.
+            <br>
+            These are the rules of the Output variables:
+        </p>
+        <ul class="alltext list">
+            <li>
+                <p class="alltext">
+                    They must have attribute <b>OutputAttribute</b> set.
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    They must be declared public and be of value type
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    In Vertex Shader, their name must match the name of InputAttribute in Fragment Shader. 
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    <b>In Fragment Shader it is possible to have only one Output Variable.</b> (Otherwise the linking process will fail)  
+                </p>
+            </li>
+        </ul>
+        <h2 class="alltext h2text">Uniform Variables</h2>
+        <p class="alltext ptext">
+            Values that are uniform accross whole render pipeline.
+            They can be set from outside of render pipeline though ShaderProgram variable.
+            <br>
+            <b>Though possible, it is highly recomended to not set them in shaders, since it could lead to
+            racing conditions and data missmatch.</b>
+            <br>
+            These variables are useful when setting textures samplers, but also for other static data.
+            <br>
+            These are the rules for Uniform Variables:    
+        </p>
+        <ul class="alltext list">
+            <li>
+                <p class="alltext">
+                    They must have attribute <b>UniformAttribute</b> set.
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    <b>They must be static</b>
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    They must be declared public and be of value type
+                </p>
+            </li>
+            <li>
+                <p class="alltext">
+                    The name of the attribute is the name users set these variables through ShaderProgram. 
+                </p>
+            </li>
+        </ul>
+    </div>
+    <script src="top-panel-movement.js"></script>
+    <script src="load-top-panel.js"></script> 
+
+    <script src="main.js"></script>
+</body>
+</html>
