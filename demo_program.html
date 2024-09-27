@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Documentation For C# CPU Rasterizer By Daniel Ďurica</title>
+</head>
+<body>
+    <div id="top-panel-placeholder"></div> 
+
+    <div class="bodycontent">
+        <h1 class="alltext h1text">Demo Application</h1>
+        <p class="alltext ptext">
+           For my Demo program I wanted to make something that would mimic how it would be used in real world application.
+           Therefore I created something like backbone of a light engine. Nothing too complex, but very customisable.
+        </p>
+        <img src="images/simple_comp_engine.drawio.png " alt="renderer_basic_diagram" class="siteimage">
+        <h2 class="alltext h2text">GameController</h2>
+        <p class="alltext ptext">
+            As you can see the demos application main class is GameController. This Class is responsible for operating the Game Loop, Setting important variables such as Time,
+            and drawing using the CPU Renderer. It holds 2 important objects, LogicController and KeyboardManager.
+        </p>
+        <h2 class="alltext h2text">LogicController</h2>
+        <p class="alltext ptext">
+           This object serves to shift the burden of controlling logical parts of the application.
+           For instance scene management, initialization of objects, run of the objects Update methods.
+           It holds "Scenes" (Any GameObject on top of hierarchy) in dictionary where key is the name of the scene.
+           Therefore, you can have multiple loaded scenes at once.
+        </p>
+        <h2 class="alltext h2text">GameObjects</h2>
+        <p class="alltext ptext">
+           Basicaly the same thing as you would expect. These objects are the objects to which you can assign
+           ObjectComponents. Each gameobject has to have one ObjectComponent Transform, that has object position, rotation and scale.
+           Each GameObject can be child of another GameObject, but only one GameObject. This makes the scene hierarchy where the root is just
+           another GameObject.
+        </p>
+        <h2 class="alltext h2text">ObjectComponents</h2>
+        <p class="alltext ptext">
+           These are customizable, but I created some component just to showcase the application.
+           They are nothing special, but there is one important I should talk about.
+           KeyboardMC is for handling input for other components. They are registered to KeyboardManager and can process Push, Release and Hold actions.
+           Very easy to configure, all you need is to say "Hey, I want this function to be called when holding this key". And they do just that. 
+        </p>
+        <h2 class="alltext h2text">KeyboardManager</h2>
+        <p class="alltext ptext">
+          It's role is simple, retraffic inputs to other registered KeyboardMC components. KeyboardMC will register at their Start method and then Unregister when they are destroyed.
+        </p>
+
+    </div>
+    <script src="top-panel-movement.js"></script>
+    <script src="load-top-panel.js"></script> 
+    <script src="main.js"></script>
+</body>
+</html>

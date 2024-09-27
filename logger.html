@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Documentation For C# CPU Rasterizer By Daniel Ďurica</title>
+</head>
+<body>
+    <div id="top-panel-placeholder"></div> 
+
+    <div class="bodycontent">
+        <h1 class="alltext h1text">Assynchronous Logger</h1>
+        <p class="alltext ptext">
+            I know I needed the customisable and most importatnly assynchronous Logger for my project.
+            So I created one. It works thanks to Monitor.Wait and Monitor.Pulse. It has an empty message queue, where it stores information about messages. When this queue is empty it waits,
+            but when message comes, it pulses the waiting thread to do it's job and write messages using given TextWritter.
+            Other than that, the logger is customisable with LoggerSettings structure. You can change message color and what messages are shown.
+            When using, the user is required to call Stop after finishing. Otherwise the program will not stop.
+        </p>
+        <img src="images/logger.png" alt="renderer_basic_diagram" class="siteimage">
+    </div>
+    <script src="top-panel-movement.js"></script>
+    <script src="load-top-panel.js"></script> 
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Documentation For C# CPU Rasterizer By Daniel Ďurica</title>
+</head>
+<body>
+    <div id="top-panel-placeholder"></div> 
+
+    <div class="bodycontent">
+        <h1 class="alltext h1text">FileLoader</h1>
+        <h2 class="alltext h2text">ObjectLoader</h2>
+        <p class="alltext ptext">
+            Loads obj files with help of SharpGL and returns contructed VAOs.
+            As for now it ignores the hierarchy of the file and returns only the constructed VAOs in array.
+            Constructed Vertices have Position, Normals and UV coordinates. It doesn't support materials of the object and other stuff.
+            It does however triangulate the object so that rasterizer can work with it.  
+        </p>
+        <img src="images/monke.png" alt="renderer_basic_diagram" class="siteimage">
+        <h2 class="alltext h2text">TextureLoader</h2>
+        <p class="alltext ptext">
+            Loads image files with help of ImageSharp and returns contructed TextureBuffers.
+            It also caches the loaded textures so if you want your own texture, either use "_New" method, or use Copy on the TextureBuffer.  
+        </p>
+        <img src="images/shrek.png" alt="renderer_basic_diagram" class="siteimage">
+    </div>
+    <script src="top-panel-movement.js"></script>
+    <script src="load-top-panel.js"></script> 
+    <script src="main.js"></script>
+</body>
+</html>
