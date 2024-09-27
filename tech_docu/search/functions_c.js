@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['texture1d_0',['Texture1d',['../class_c_p_u___doom_1_1_shaders_1_1_shader_functions.html#a6362d4158b4fe2ce0332fc516a21cdec',1,'CPU_Doom::Shaders::ShaderFunctions']]],
+  ['texture2d_1',['Texture2d',['../class_c_p_u___doom_1_1_shaders_1_1_shader_functions.html#a601dcb9e70d0a93fe636a2e83799e333',1,'CPU_Doom.Shaders.ShaderFunctions.Texture2d(int sampler1d, float posX, float posY)'],['../class_c_p_u___doom_1_1_shaders_1_1_shader_functions.html#a3caf31b8aa46b00a78dd0ed62c5bffcc',1,'CPU_Doom.Shaders.ShaderFunctions.Texture2d(int sampler1d, Vector2 pos)']]],
+  ['texturebuffer1d_2',['TextureBuffer1d',['../class_c_p_u___doom_1_1_buffers_1_1_texture_buffer1d.html#a1a2245a05e41c65342a29783c4701279',1,'CPU_Doom.Buffers.TextureBuffer1d.TextureBuffer1d(FrameBuffer buffer)'],['../class_c_p_u___doom_1_1_buffers_1_1_texture_buffer1d.html#a99b4c94c348fd5e224b0307b8ef25494',1,'CPU_Doom.Buffers.TextureBuffer1d.TextureBuffer1d(byte[] data, int size, Types.PIXELTYPE type)']]],
+  ['texturebuffer2d_3',['TextureBuffer2d',['../class_c_p_u___doom_1_1_buffers_1_1_texture_buffer2d.html#abc15772e473105472058cd4e1398d46e',1,'CPU_Doom.Buffers.TextureBuffer2d.TextureBuffer2d(FrameBuffer2d buffer)'],['../class_c_p_u___doom_1_1_buffers_1_1_texture_buffer2d.html#a1b476df654f9fbc5105b0d186c4262e9',1,'CPU_Doom.Buffers.TextureBuffer2d.TextureBuffer2d(byte[] data, int width, int height, Types.PIXELTYPE type)']]]
+];
